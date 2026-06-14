@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth overflow-x-hidden" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -132,7 +132,7 @@
 <body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
 
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-2xl border-b border-outline-variant/10">
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-outline-variant/10">
     <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
         <a class="font-display-lg text-headline-md tracking-tighter text-primary" href="index.html">La Maison</a>
         
@@ -157,7 +157,7 @@
     </div>
     
     <!-- Mobile Navigation Drawer -->
-    <div class="fixed inset-0 z-40 bg-surface/98 backdrop-blur-md hidden flex-col justify-center items-center gap-8 transition-all duration-300 transform translate-x-full md:hidden" id="mobile-menu">
+    <div class="fixed inset-0 z-40 bg-surface backdrop-blur-md hidden flex flex-col justify-center items-center gap-8 transition-all duration-300 transform translate-x-full md:hidden" id="mobile-menu">
         <!-- Close Button -->
         <button class="absolute top-6 right-margin-mobile text-primary focus:outline-none" id="close-btn" aria-label="Close Menu">
             <span class="material-symbols-outlined text-3xl">close</span>
