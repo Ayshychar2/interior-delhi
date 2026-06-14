@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact Us | La Maison Interior Design</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-input-focus:focus {
+            border-bottom-color: #a2803d !important;
+            outline: none;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "tertiary": "#060300",
+                        "error": "#ba1a1a",
+                        "on-background": "#1d1b16",
+                        "surface-container-low": "#f9f3ea",
+                        "on-primary-container": "#898483",
+                        "inverse-surface": "#33302a",
+                        "on-surface": "#1d1b16",
+                        "outline": "#7e7570",
+                        "surface-container-highest": "#e8e2d9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#261900",
+                        "on-surface-variant": "#4d4541",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdea5",
+                        "secondary-fixed": "#e4e2dd",
+                        "inverse-primary": "#cbc5c3",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "surface-tint": "#615e5c",
+                        "secondary": "#5e5e5b",
+                        "surface-container-high": "#ede7de",
+                        "on-secondary-fixed-variant": "#474744",
+                        "surface-dim": "#dfd9d0",
+                        "secondary-container": "#e1dfdb",
+                        "surface-bright": "#fff8ef",
+                        "primary": "#040303",
+                        "inverse-on-surface": "#f6f0e7",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c6c2",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e7e1df",
+                        "on-secondary-container": "#63635f",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#291b00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1b1c19",
+                        "outline-variant": "#d0c4be",
+                        "surface-container": "#f3ede4",
+                        "on-primary-fixed-variant": "#494645",
+                        "surface-variant": "#e8e2d9",
+                        "surface": "#fff8ef",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#cbc5c3",
+                        "background": "#fff8ef",
+                        "on-tertiary-container": "#a2803d",
+                        "on-primary-fixed": "#1d1b1a",
+                        "primary-container": "#1f1d1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "80px",
+                        "section-gap": "160px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "display-lg-mobile": ["Bodoni Moda"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "quote": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "quote": ["24px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-tertiary-fixed selection:text-tertiary">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-2xl border-b border-outline-variant/10">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+        <a class="font-display-lg text-headline-md tracking-tighter text-primary" href="index.html">La Maison</a>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-12">
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="index.html#philosophy">About Us</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+            <a class="font-label-caps text-label-caps text-primary font-semibold border-b border-primary pb-1" href="contact.html">Contacts</a>
+        </div>
+        
+        <!-- CTA & Hamburger Button Wrapper -->
+        <div class="flex items-center gap-6">
+            <a href="contact.html" class="hidden sm:inline-block font-label-caps text-label-caps border border-primary px-8 py-3 hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-95 text-center">
+                Consultation
+            </a>
+            <button class="md:hidden flex items-center text-primary focus:outline-none" id="menu-btn" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation Drawer -->
+    <div class="fixed inset-0 z-40 bg-surface/98 backdrop-blur-md hidden flex-col justify-center items-center gap-8 transition-all duration-300 transform translate-x-full md:hidden" id="mobile-menu">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-margin-mobile text-primary focus:outline-none" id="close-btn" aria-label="Close Menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        
+        <a class="font-display-lg text-4xl text-primary mb-4" href="index.html">La Maison</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="index.html">Home</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="index.html#philosophy">About Us</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="services.html">Services</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="portfolio.html">Portfolio</a>
+        <a class="font-label-caps text-lg text-primary font-semibold border-b border-primary pb-1 uppercase tracking-widest" href="contact.html">Contacts</a>
+        
+        <a href="contact.html" class="mt-4 bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:opacity-80 active:scale-95 transition-all duration-200">
+            Consultation
+        </a>
+    </div>
+</nav>
+
+<main class="pt-40">
+    <!-- Hero Section -->
+    <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-32 reveal-on-scroll">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+            <div class="md:col-span-8 md:col-start-2">
+                <span class="font-label-caps text-label-caps text-on-tertiary-container mb-6 block">GET IN TOUCH</span>
+                <h1 class="font-display-lg text-display-lg md:text-display-lg mb-8">Let's Create Your Dream Space Together.</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Whether you're looking for a complete renovation or a simple consultation, our studio is ready to bring your vision to life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-section-gap reveal-on-scroll">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+            <!-- Contact Form -->
+            <div class="md:col-span-6 bg-surface-container-low p-8 md:p-16">
+                <form class="space-y-12" id="contactForm">
+                    <div class="relative">
+                        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-4" for="name">YOUR NAME</label>
+                        <input required class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline/30 py-4 font-body-md text-body-md focus:ring-0 form-input-focus transition-all" id="name" name="name" placeholder="Enter your full name" type="text"/>
+                    </div>
+                    <div class="relative">
+                        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-4" for="email">EMAIL ADDRESS</label>
+                        <input required class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline/30 py-4 font-body-md text-body-md focus:ring-0 form-input-focus transition-all" id="email" name="email" placeholder="hello@company.com" type="email"/>
+                    </div>
+                    <div class="relative">
+                        <label class="font-label-caps text-label-caps text-on-surface-variant block mb-4" for="message">MESSAGE</label>
+                        <textarea required class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline/30 py-4 font-body-md text-body-md focus:ring-0 form-input-focus transition-all resize-none" id="message" name="message" placeholder="Tell us about your project..." rows="4"></textarea>
+                    </div>
+                    <button class="w-full md:w-auto bg-primary text-on-primary font-label-caps text-label-caps px-12 py-5 hover:opacity-90 transition-opacity active:scale-[0.98]" type="submit">
+                        SEND MESSAGE
+                    </button>
+                </form>
+            </div>
+            <!-- Info & Map -->
+            <div class="md:col-span-5 md:col-start-8 flex flex-col justify-between py-8 mt-12 md:mt-0">
+                <div class="space-y-16">
+                    <div>
+                        <span class="font-label-caps text-label-caps text-on-surface-variant mb-6 block uppercase tracking-widest">Visit Our Studio</span>
+                        <h2 class="font-headline-md text-headline-md mb-4">124 Lexington Avenue,<br/>Suite 405, Manhattan,<br/>New York, NY 10016</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant mb-3 block">PHONE</span>
+                            <p class="font-body-lg text-body-lg font-medium">+1 (212) 555-0198</p>
+                        </div>
+                        <div>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant mb-3 block">EMAIL</span>
+                            <p class="font-body-lg text-body-lg font-medium">studio@lamaison.com</p>
+                        </div>
+                    </div>
+                    <div class="relative aspect-[16/9] w-full overflow-hidden grayscale brightness-95 contrast-105 group border border-outline/10">
+                        <img alt="Map location" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU_mVLbVPBjmOhIQTk3DwzjKaWFQl2ilgMpcM4ND-louaB_VFhgn-F1owA2FCxV-uV3NhYf_nyHya6MpQrWyPW5g40JusCPUfe26ftnqxwbL8qbjOJ7GwFzhh-JDDbGLsJJcS-Moc7Vrh1BMiqDU6LVSRgedpMiqFIQM_0ocMsgQKHqNzbI1JQmTpYsncJr5O-eFZ2O785gFMwbXCNcczCTM9gVohz-OugkIUlhRwXIFlu_94fzAHQpfo7qVATmpRGU0ZlBym_MIwz"/>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-primary text-on-primary p-4 rounded-full shadow-xl">
+                                <span class="material-symbols-outlined block text-2xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16 pt-16 border-t border-outline/10">
+                    <span class="font-label-caps text-label-caps text-on-surface-variant mb-6 block">FOLLOW US</span>
+                    <div class="flex space-x-8">
+                        <a class="font-body-md text-body-md hover:text-on-tertiary-container transition-colors" href="#">Instagram</a>
+                        <a class="font-body-md text-body-md hover:text-on-tertiary-container transition-colors" href="#">LinkedIn</a>
+                        <a class="font-body-md text-body-md hover:text-on-tertiary-container transition-colors" href="#">Pinterest</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="bg-surface-container py-section-gap reveal-on-scroll">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="font-headline-lg text-headline-lg mb-8">Join the Inner Circle</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Subscribe to receive exclusive project updates and interior design insights from our team of experts.</p>
+                <form class="flex flex-col md:flex-row gap-4 justify-center items-end" id="newsletterForm">
+                    <div class="w-full md:w-80">
+                        <input required class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline/30 py-4 focus:ring-0 form-input-focus" placeholder="Email Address" type="email"/>
+                    </div>
+                    <button class="bg-tertiary text-on-tertiary font-label-caps text-label-caps px-10 py-4 hover:opacity-90 transition-all uppercase" type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-20 bg-surface-container border-t border-outline/5">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="md:col-span-4">
+            <div class="font-display-lg text-headline-md text-primary mb-8">La Maison</div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                Crafting timeless environments that speak of quiet luxury and deliberate simplicity.
+            </p>
+        </div>
+        <div class="md:col-span-2 md:col-start-6 mb-8 md:mb-0">
+            <span class="font-label-caps text-label-caps text-on-surface-variant mb-6 block">STUDIO</span>
+            <ul class="space-y-4">
+                <li><a class="font-body-md text-body-md text-on-surface hover:text-primary underline transition-all" href="index.html#philosophy">About Us</a></li>
+                <li><a class="font-body-md text-body-md text-on-surface hover:text-primary underline transition-all" href="portfolio.html">Portfolio</a></li>
+                <li><a class="font-body-md text-body-md text-on-surface hover:text-primary underline transition-all" href="services.html">Services</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-2 mb-8 md:mb-0">
+            <span class="font-label-caps text-label-caps text-on-surface-variant mb-6 block">LEGAL</span>
+            <ul class="space-y-4">
+                <li><a class="font-body-md text-body-md text-on-surface hover:text-primary underline transition-all" href="#">Privacy Policy</a></li>
+                <li><a class="font-body-md text-body-md text-on-surface hover:text-primary underline transition-all" href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-2">
+            <span class="font-label-caps text-label-caps text-on-surface-variant mb-6 block">SOCIAL</span>
+            <ul class="space-y-4">
+                <li><a class="font-body-md text-body-md text-on-surface hover:text-primary underline transition-all" href="#">Instagram</a></li>
+                <li><a class="font-body-md text-body-md text-on-surface hover:text-primary underline transition-all" href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-12 mt-20 pt-8 border-t border-outline/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-label-caps text-label-caps text-on-surface-variant">© 2024 La Maison Interior Design. All rights reserved.</p>
+            <div class="flex items-center space-x-2">
+                <span class="font-label-caps text-label-caps text-on-surface-variant">Crafted with intention.</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple scroll reveal observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    // Form Submission Micro-interaction
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'SENDING...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = 'MESSAGE SENT';
+                btn.classList.add('bg-on-tertiary-container');
+                btn.classList.remove('bg-primary');
+                form.reset();
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-on-tertiary-container');
+                    btn.classList.add('bg-primary');
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+    }
+
+    // Newsletter Form Submission Micro-interaction
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = newsletterForm.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'SUBSCRIBED';
+            btn.disabled = true;
+            newsletterForm.reset();
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }, 3000);
+        });
+    }
+
+    // Mobile menu toggle logic
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && closeBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            }, 10);
+            document.body.classList.add('overflow-hidden');
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
+</script>
+</body>
+</html>

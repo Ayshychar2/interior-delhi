@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>La Maison | Elevating Spaces, Redefining Living</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "tertiary": "#060300",
+                    "error": "#ba1a1a",
+                    "on-background": "#1d1b16",
+                    "surface-container-low": "#f9f3ea",
+                    "on-primary-container": "#898483",
+                    "inverse-surface": "#33302a",
+                    "on-surface": "#1d1b16",
+                    "outline": "#7e7570",
+                    "surface-container-highest": "#e8e2d9",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#261900",
+                    "on-surface-variant": "#4d4541",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffdea5",
+                    "secondary-fixed": "#e4e2dd",
+                    "inverse-primary": "#cbc5c3",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "surface-tint": "#615e5c",
+                    "secondary": "#5e5e5b",
+                    "surface-container-high": "#ede7de",
+                    "on-secondary-fixed-variant": "#474744",
+                    "surface-dim": "#dfd9d0",
+                    "secondary-container": "#e1dfdb",
+                    "surface-bright": "#fff8ef",
+                    "primary": "#040303",
+                    "inverse-on-surface": "#f6f0e7",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#c8c6c2",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#e7e1df",
+                    "on-secondary-container": "#63635f",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#291b00",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#1b1c19",
+                    "outline-variant": "#d0c4be",
+                    "surface-container": "#f3ede4",
+                    "on-primary-fixed-variant": "#494645",
+                    "surface-variant": "#e8e2d9",
+                    "surface": "#fff8ef",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#cbc5c3",
+                    "background": "#fff8ef",
+                    "on-tertiary-container": "#a2803d",
+                    "on-primary-fixed": "#1d1b1a",
+                    "primary-container": "#1f1d1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "section-gap": "160px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "display-lg": ["Bodoni Moda"],
+                    "headline-md": ["Bodoni Moda"],
+                    "display-lg-mobile": ["Bodoni Moda"],
+                    "label-caps": ["Hanken Grotesk"],
+                    "headline-lg": ["Bodoni Moda"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "quote": ["Bodoni Moda"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "quote": ["24px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px currentColor;
+            -webkit-text-fill-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-on-tertiary-container selection:text-white">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-2xl border-b border-outline-variant/10 transition-all duration-500" id="top-nav">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+        <a class="font-display-lg text-headline-md tracking-tighter text-primary" href="index.html">La Maison</a>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-10">
+            <a class="font-label-caps text-label-caps text-primary font-semibold border-b border-primary pb-1" href="index.html">Home</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="index.html#philosophy">About Us</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contacts</a>
+        </div>
+        
+        <!-- CTA & Hamburger Button Wrapper -->
+        <div class="flex items-center gap-6">
+            <a href="contact.html" class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:opacity-80 active:scale-95 transition-all duration-200 text-center">
+                Consultation
+            </a>
+            <button class="md:hidden flex items-center text-primary focus:outline-none" id="menu-btn" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation Drawer -->
+    <div class="fixed inset-0 z-40 bg-surface/98 backdrop-blur-md hidden flex-col justify-center items-center gap-8 transition-all duration-300 transform translate-x-full md:hidden" id="mobile-menu">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-margin-mobile text-primary focus:outline-none" id="close-btn" aria-label="Close Menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        
+        <a class="font-display-lg text-4xl text-primary mb-4" href="index.html">La Maison</a>
+        <a class="font-label-caps text-lg text-primary font-semibold border-b border-primary pb-1 uppercase tracking-widest" href="index.html">Home</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="index.html#philosophy">About Us</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="services.html">Services</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="portfolio.html">Portfolio</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="contact.html">Contacts</a>
+        
+        <a href="contact.html" class="mt-4 bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:opacity-80 active:scale-95 transition-all duration-200">
+            Consultation
+        </a>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/20 z-10"></div>
+            <img alt="Luxury Living Room" class="w-full h-full object-cover scale-105 animate-[pulse_10s_ease-in-out_infinite]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SqCDngj7XtYTphqXhKeaTl2LyOWWwGFKC50vlFvQwB_BrL10stCu2utc0FQHiB_OfvE3a7Qb9Mi__mkHnDoiL5yXqWANONT7vFHQy7RFZ09OzPkKqWJKmNpWMaIB-S3gDyzLPlwfuT3etL5JgqGnx4SBPRk6kDxRbVYrlpwEOCj2AkrA9bWOVNKWa8KfMn9Rs9zX4sJrR5sOR1i0FvHSU9ISrlcny6baiApLCB6j3YIIuQTYmr6Bo1yXqZ5db3yMM8w97Z7TmZux"/>
+        </div>
+        <div class="relative z-20 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="md:grid md:grid-cols-12 gap-gutter">
+                <div class="md:col-span-8 lg:col-span-6">
+                    <span class="font-label-caps text-label-caps text-white mb-6 block tracking-[0.3em] opacity-80">ESTABLISHED 2012</span>
+                    <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-10 leading-tight">
+                        Elevating Spaces, <br/>
+                        <span class="italic font-normal">Redefining Living.</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-white/90 max-w-md mb-12">
+                        We craft bespoke architectural narratives that balance functional precision with emotional resonance, creating homes that are as soulful as they are sophisticated.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a href="portfolio.html" class="bg-white text-primary px-10 py-5 font-label-caps text-label-caps hover:bg-surface-container-high transition-colors text-center">
+                            Explore Projects
+                        </a>
+                        <a href="#philosophy" class="border border-white text-white px-10 py-5 font-label-caps text-label-caps hover:bg-white/10 transition-colors text-center">
+                            Our Philosophy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stats Overlay (Bottom Right) -->
+        <div class="absolute bottom-10 right-0 hidden lg:block bg-surface-container-lowest/10 backdrop-blur-md p-10 pr-margin-desktop border-l border-white/20">
+            <div class="flex gap-20">
+                <div>
+                    <span class="block font-display-lg text-headline-lg text-white">120+</span>
+                    <span class="font-label-caps text-label-caps text-white/70">Projects Delivered</span>
+                </div>
+                <div>
+                    <span class="block font-display-lg text-headline-lg text-white">15</span>
+                    <span class="font-label-caps text-label-caps text-white/70">Design Awards</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Philosophy Section -->
+    <section id="philosophy" class="py-section-gap bg-background overflow-hidden">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid md:grid-cols-12 gap-gutter items-center">
+                <div class="md:col-span-5 order-2 md:order-1">
+                    <div class="relative">
+                        <img alt="Materials Philosophy" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqeNkiZsQBSWJTOzZfOJuW0eLHYwytgELOoAOx9K2MuKal8JuK1s-n6T-9exlj9X7CuZTYZfdPcU_02sBCngtR92Lk_ZQv7luMMf-ikHKxGdEpdwILLwJLwSlx1qtM6YE6mMjxHDMRa2e7k0IGRU6-dSYvHX7QZIVI-9psId5cnpNm2-448_OQwgA4ItdFYpHw6hyplD6a3YdCWuCsOhMyghXZLvlSmOmZ8fBaVfcEnd3kTTgG7D3WEbWPI9oMXwzLy6gZJLYm4kqI"/>
+                        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-primary flex items-center justify-center p-8 text-center">
+                            <p class="font-label-caps text-label-caps text-white leading-relaxed">Crafting Timelessness Since 2012</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-6 md:col-start-7 order-1 md:order-2 mb-16 md:mb-0">
+                    <span class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.3em] block mb-8">PHILOSOPHY</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-8 leading-snug">The Art of Subtraction.</h2>
+                    <div class="space-y-6">
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">
+                            We believe that true luxury is found in the intentionality of every line, the quality of every material, and the breathability of every space. Our approach is rooted in the concept of 'Quiet Luxury'—an aesthetic that doesn't scream for attention but rather commands it through understated elegance.
+                        </p>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Every project at La Maison begins with an understanding of the inhabitant's ritual. We design for the way you move, breathe, and find silence in your home.
+                        </p>
+                    </div>
+                    <div class="mt-12 flex items-center gap-6 group cursor-pointer" onclick="document.getElementById('philosophy').scrollIntoView({behavior: 'smooth'})">
+                        <div class="w-12 h-[1px] bg-primary group-hover:w-20 transition-all"></div>
+                        <span class="font-label-caps text-label-caps text-primary">READ THE MANIFESTO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Grid -->
+    <section class="pb-section-gap bg-background">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="flex justify-between items-end mb-20">
+                <div>
+                    <span class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.3em] block mb-4">PORTFOLIO</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary">Curated Works</h2>
+                </div>
+                <a class="hidden md:flex items-center gap-4 group" href="portfolio.html">
+                    <span class="font-label-caps text-label-caps text-primary">VIEW ALL PROJECTS</span>
+                    <span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter">
+                <!-- Project Card 1: Large -->
+                <a href="portfolio.html" class="lg:col-span-7 group cursor-pointer block">
+                    <div class="overflow-hidden mb-6 relative aspect-[16/9]">
+                        <img alt="The Sanctuary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4SXiZqbemnq_6ittelWnVea1tx-s8ip4rvqNqz_J6R73oAH-ZsP6CS1KHaiJPiIiI-m_DU9bsi4d3mCU7WbIXASXjaoMoylCdcGxof68kwga05if3tRk51rUNijEV3OuP3VnGL8dEwhuhXfFZQbPl7zMLko6CIeoPSjjGNJ1GQz28vAD7VS3Uu9XCXpjGc81lbrrjkhvzjIai0Uu-QZOXTfxI4G_MjmphFI42yMdN3PH3PelfOQaT10xQUbs3I2fwjeMhDK0QdP4A"/>
+                        <div class="absolute top-6 right-6 bg-white/10 backdrop-blur-md px-4 py-2 border border-white/20">
+                            <span class="font-label-caps text-[10px] text-white">RESIDENTIAL</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-2">The Sanctuary</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">London, United Kingdom</p>
+                </a>
+                <!-- Project Card 2: Tall Vertical -->
+                <a href="portfolio.html" class="lg:col-span-5 lg:mt-32 group cursor-pointer block">
+                    <div class="overflow-hidden mb-6 relative aspect-[3/4]">
+                        <img alt="Aesthetic Kitchen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGJL59otECBSMPj0QjGpoAJLJT7WD2AUnkSPtyKIYJnfxPkHBGXae73g6HxnA8mkqVCd-xlI_jbbiuklAqx8QyN8Q32Nnho5DVqPERV0hs-qTUuDNzhie_zc8MDPTaTZCicGofDlVGQOLBf8DDNMU2ehIMHoz4R4E08tHqtdyUrnIry3dqN4aJUYDYCFPU3YW2n1s6vxQv7c9wnvAtU3I_eSmTNWJvnh3W69HyUdtuJFQSiTuyzIkgID9kR0W1C97qS6sS6WfDQgNi"/>
+                        <div class="absolute top-6 right-6 bg-white/10 backdrop-blur-md px-4 py-2 border border-white/20">
+                            <span class="font-label-caps text-[10px] text-white">CULINARY</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-2">Obsidian Kitchen</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Paris, France</p>
+                </a>
+                <!-- Project Card 3: Small offset -->
+                <a href="portfolio.html" class="lg:col-span-4 group cursor-pointer block">
+                    <div class="overflow-hidden mb-6 relative aspect-[1/1]">
+                        <img alt="The Atelier" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSV4Q8LdFH1DIi1qZSj3df5XIRyMt810kAIqO_xp-_SRGATal4djOOGk96eBu9XY4qp3OPlloJ58CqUYQZi-BgbASTQmnjOZN_WoW444zjLPjtbM9tFg4Ip7xkw6eEzS_2jHZTkLabH_yhcNlYwsMM37aeJYoobKQn_auljrurw11rkYP0VHs6kj0gbB4OYeQAmxp1X1ssFcyQhDKzK5yIwUJf3GzeWyLc4yPGiHvHWgYkSdqZVtaDi7coYkMVPQCE0FHq3XYia9fB"/>
+                        <div class="absolute top-6 right-6 bg-white/10 backdrop-blur-md px-4 py-2 border border-white/20">
+                            <span class="font-label-caps text-[10px] text-white">WORKSPACE</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-2">The Atelier</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Milan, Italy</p>
+                </a>
+                <!-- Project Card 4: Medium wide -->
+                <a href="portfolio.html" class="lg:col-span-8 group cursor-pointer block">
+                    <div class="overflow-hidden mb-6 relative aspect-[16/9]">
+                        <img alt="Limestone Arches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Zh1GXUTLOtgHDOeJmepdT_qARch3Dh29hoj9FpDP2y1d9KmymKMtmHhp-26RrrjNQ_lAU8Hd0TUHDa7Zq2kHtLoygzqeKBCz89M4iyrx4hS0_RQ-7K_7NloSlx-VE_dOCW2YaqIhd323yZvUlF-4PYw28b7_RX1nM1-ZJBBK6C_Khve-GqLf9oKYwrCxZuuRnmjax13CY-uSW82bobm24mTkN7whXfM4_7Cfwsu7DqRHZKC_vCiWIgyqJEIPwiqTVCJs5Oli3qhx"/>
+                        <div class="absolute top-6 right-6 bg-white/10 backdrop-blur-md px-4 py-2 border border-white/20">
+                            <span class="font-label-caps text-[10px] text-white">ARCHITECTURE</span>
+                        </div>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-2">Purity Villa</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Mallorca, Spain</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-section-gap bg-surface-container-low overflow-hidden">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid lg:grid-cols-12 gap-gutter items-center">
+                <div class="lg:col-span-8 lg:col-start-3 text-center">
+                    <span class="material-symbols-outlined text-on-tertiary-container text-5xl mb-10" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                    <blockquote class="font-quote text-quote md:text-headline-md text-primary mb-12 italic leading-relaxed">
+                        "La Maison didn't just design our house; they curated an experience. Every morning when the light hits the breakfast nook, we're reminded that beauty is not an ornament, but a way of living."
+                    </blockquote>
+                    <div class="flex flex-col items-center">
+                        <img alt="Julian Vance" class="w-24 h-24 rounded-full object-cover mb-4 border-2 border-white shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOKYINDq8Fp1DNibhd9Uv9qapbgRXlRZdY_uEZ43o4ptk6YaVqITO-g8PpbxkzEEks1bHZr6auYsaw53T3l5G56nej4nSPMt-mQSCvMM4z5tjY7vagUvD_vMoMxN6bJdx8CrwFn_N-q5DTfBeZ9PhZHZBvjF8lOnznGc6_-E9LttHl8WY3xLioQbqMSmOFj3SX_bxalOIyhrgTeaL1j31ZKrGn5PxuaXT7kE7Y6AZMLVjqOOm9zwpG622l1Lsn2BHynUASnCp1ORsf"/>
+                        <p class="font-label-caps text-label-caps text-primary mb-1">JULIAN VANCE</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Vance Estate, United Kingdom</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / CTA Section -->
+    <section class="py-section-gap">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="bg-primary p-12 md:p-24 relative overflow-hidden">
+                <!-- Decorative Circle -->
+                <div class="absolute top-0 right-0 w-96 h-96 border border-white/10 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+                <div class="relative z-10 lg:grid lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <h2 class="font-display-lg text-headline-lg text-white mb-8">Ready to define your space?</h2>
+                        <p class="font-body-lg text-body-lg text-white/70 mb-12 max-w-md">
+                            Whether it's a single room renovation or a complete architectural build, our team is ready to bring your vision to life with precision and passion.
+                        </p>
+                        <a href="contact.html" class="inline-block bg-white text-primary px-12 py-5 font-label-caps text-label-caps hover:bg-tertiary-fixed transition-colors text-center">
+                            BOOK A CONSULTATION
+                        </a>
+                    </div>
+                    <div class="hidden lg:grid grid-cols-2 gap-8">
+                        <div class="space-y-8">
+                            <div class="border-b border-white/20 pb-6">
+                                <h4 class="font-label-caps text-label-caps text-white mb-2">INTERIOR DESIGN</h4>
+                                <p class="text-[14px] text-white/50 leading-relaxed">Full-scale residential and commercial design concepts.</p>
+                            </div>
+                            <div class="border-b border-white/20 pb-6">
+                                <h4 class="font-label-caps text-label-caps text-white mb-2">ART CURATION</h4>
+                                <p class="text-[14px] text-white/50 leading-relaxed">Sourcing bespoke artworks and sculptural pieces.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-8 mt-12">
+                            <div class="border-b border-white/20 pb-6">
+                                <h4 class="font-label-caps text-label-caps text-white mb-2">SPACE PLANNING</h4>
+                                <p class="text-[14px] text-white/50 leading-relaxed">Optimizing architectural flow and functional utility.</p>
+                            </div>
+                            <div class="border-b border-white/20 pb-6">
+                                <h4 class="font-label-caps text-label-caps text-white mb-2">PROJECT MGMT</h4>
+                                <p class="text-[14px] text-white/50 leading-relaxed">End-to-end oversight from blueprint to furniture placement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="md:col-span-4 mb-12 md:mb-0">
+            <a class="font-display-lg text-headline-md text-primary block mb-8" href="index.html">La Maison</a>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-8">
+                An international interior design studio focused on high-end residential and commercial architectural narratives.
+            </p>
+            <div class="flex gap-6">
+                <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="Website"><span class="material-symbols-outlined">public</span></a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="Email"><span class="material-symbols-outlined">alternate_email</span></a>
+            </div>
+        </div>
+        <div class="md:col-span-2 col-start-7 mb-10 md:mb-0">
+            <h5 class="font-label-caps text-label-caps text-primary mb-8">STUDIO</h5>
+            <ul class="space-y-4">
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="index.html#philosophy">About Us</a></li>
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="services.html">Our Process</a></li>
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="portfolio.html">Portfolio</a></li>
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">Press</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-2 mb-10 md:mb-0">
+            <h5 class="font-label-caps text-label-caps text-primary mb-8">LEGAL</h5>
+            <ul class="space-y-4">
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a></li>
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-2">
+            <h5 class="font-label-caps text-label-caps text-primary mb-8">SOCIAL</h5>
+            <ul class="space-y-4">
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">Instagram</a></li>
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">LinkedIn</a></li>
+                <li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">Pinterest</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-12 border-t border-outline-variant/20 mt-20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="font-label-caps text-label-caps text-on-surface-variant">© 2024 La Maison Interior Design. All rights reserved.</p>
+            <div class="flex items-center gap-2 cursor-pointer group" id="back-to-top">
+                <span class="font-label-caps text-label-caps text-primary">BACK TO TOP</span>
+                <span class="material-symbols-outlined text-primary group-hover:-translate-y-1 transition-transform">arrow_upward</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Interaction: Nav Background Shift on Scroll
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('top-nav');
+        if (window.scrollY > 100) {
+            nav.classList.add('py-4', 'shadow-sm');
+            nav.classList.remove('py-6');
+        } else {
+            nav.classList.remove('py-4', 'shadow-sm');
+            nav.classList.add('py-6');
+        }
+    });
+
+    // Simple Smooth Scroll for Back To Top
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Mobile menu toggle logic
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && closeBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            }, 10);
+            document.body.classList.add('overflow-hidden');
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        
+        // Close menu when clicking links in mobile menu drawer
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
+</script>
+</body>
+</html>

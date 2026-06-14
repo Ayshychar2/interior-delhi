@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio | La Maison Interior Design</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 32px;
+        }
+        .masonry-item {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+        /* Asymmetric Layout Logic */
+        @media (min-width: 768px) {
+            .masonry-item:nth-child(3n+1) { grid-column: span 8; }
+            .masonry-item:nth-child(3n+2) { grid-column: span 4; }
+            .masonry-item:nth-child(3n+3) { grid-column: span 12; }
+            .masonry-item:nth-child(even) { margin-top: 40px; }
+        }
+        .active-filter {
+            border-bottom: 2px solid #040303;
+            color: #040303;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "tertiary": "#060300",
+                        "error": "#ba1a1a",
+                        "on-background": "#1d1b16",
+                        "surface-container-low": "#f9f3ea",
+                        "on-primary-container": "#898483",
+                        "inverse-surface": "#33302a",
+                        "on-surface": "#1d1b16",
+                        "outline": "#7e7570",
+                        "surface-container-highest": "#e8e2d9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#261900",
+                        "on-surface-variant": "#4d4541",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdea5",
+                        "secondary-fixed": "#e4e2dd",
+                        "inverse-primary": "#cbc5c3",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "surface-tint": "#615e5c",
+                        "secondary": "#5e5e5b",
+                        "surface-container-high": "#ede7de",
+                        "on-secondary-fixed-variant": "#474744",
+                        "surface-dim": "#dfd9d0",
+                        "secondary-container": "#e1dfdb",
+                        "surface-bright": "#fff8ef",
+                        "primary": "#040303",
+                        "inverse-on-surface": "#f6f0e7",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c6c2",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e7e1df",
+                        "on-secondary-container": "#63635f",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#291b00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1b1c19",
+                        "outline-variant": "#d0c4be",
+                        "surface-container": "#f3ede4",
+                        "on-primary-fixed-variant": "#494645",
+                        "surface-variant": "#e8e2d9",
+                        "surface": "#fff8ef",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#cbc5c3",
+                        "background": "#fff8ef",
+                        "on-tertiary-container": "#a2803d",
+                        "on-primary-fixed": "#1d1b1a",
+                        "primary-container": "#1f1d1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "80px",
+                        "section-gap": "160px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "display-lg-mobile": ["Bodoni Moda"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "quote": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "quote": ["24px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-2xl border-b border-outline-variant/10">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+        <a class="font-display-lg text-headline-md tracking-tighter text-primary" href="index.html">La Maison</a>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-10">
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase" href="index.html">Home</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase" href="index.html#philosophy">About Us</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase" href="services.html">Services</a>
+            <a class="text-primary font-semibold border-b border-primary pb-1 font-label-caps text-label-caps uppercase" href="portfolio.html">Portfolio</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps uppercase" href="contact.html">Contacts</a>
+        </div>
+        
+        <!-- CTA & Hamburger Button Wrapper -->
+        <div class="flex items-center gap-6">
+            <a href="contact.html" class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps uppercase hover:opacity-80 transition-opacity active:scale-95 duration-200 text-center">
+                Consultation
+            </a>
+            <button class="md:hidden flex items-center text-primary focus:outline-none" id="menu-btn" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation Drawer -->
+    <div class="fixed inset-0 z-40 bg-surface/98 backdrop-blur-md hidden flex-col justify-center items-center gap-8 transition-all duration-300 transform translate-x-full md:hidden" id="mobile-menu">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-margin-mobile text-primary focus:outline-none" id="close-btn" aria-label="Close Menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        
+        <a class="font-display-lg text-4xl text-primary mb-4" href="index.html">La Maison</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="index.html">Home</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="index.html#philosophy">About Us</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="services.html">Services</a>
+        <a class="font-label-caps text-lg text-primary font-semibold border-b border-primary pb-1 uppercase tracking-widest" href="portfolio.html">Portfolio</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="contact.html">Contacts</a>
+        
+        <a href="contact.html" class="mt-4 bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:opacity-80 active:scale-95 transition-all duration-200">
+            Consultation
+        </a>
+    </div>
+</nav>
+
+<main class="pt-40">
+    <!-- Header Section -->
+    <header class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-20 overflow-hidden">
+        <div class="md:grid md:grid-cols-12 gap-gutter items-end">
+            <div class="md:col-span-7">
+                <span class="font-label-caps text-label-caps text-on-surface-variant mb-4 block uppercase tracking-widest">Our Work</span>
+                <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Timeless Spaces, <br/>Intelligent Design.</h1>
+            </div>
+            <div class="md:col-span-4 md:col-start-9 mb-4">
+                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                    A curated collection of our most significant architectural and interior projects. We blend modern functionality with classic aesthetics to create environments that inspire.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-20">
+        <div class="flex flex-wrap gap-8 border-b border-outline-variant/30 pb-6">
+            <button class="font-label-caps text-label-caps uppercase tracking-widest transition-all hover:text-primary active-filter" data-filter="all" onclick="filterProjects('all')">All Projects</button>
+            <button class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-all hover:text-primary" data-filter="residential" onclick="filterProjects('residential')">Residential</button>
+            <button class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-all hover:text-primary" data-filter="commercial" onclick="filterProjects('commercial')">Commercial</button>
+            <button class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant transition-all hover:text-primary" data-filter="hospitality" onclick="filterProjects('hospitality')">Hospitality</button>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery (Asymmetric Masonry) -->
+    <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-section-gap">
+        <div class="masonry-grid" id="portfolio-grid">
+            <!-- Project 1: Hospitality -->
+            <div class="masonry-item project-card group" data-category="hospitality">
+                <div class="relative overflow-hidden aspect-[16/9] bg-surface-variant">
+                    <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105" alt="The Azure Lounge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ANGpm5r-E_2vjKDR2OYTlfiTcXyrB_RtmGybdU5j1_S2bvfXNuEkVjZEc21A6ep1UE_sYiS_i8yDRjRpsHjUj4DvchS2iO0sVbVIuxglbwi-HpEv4pwjp8mCrgpsH7k-lfRRa8ew5E862QWeGvuTg4KXOTHtT4A0wIE6eKwFr3Q8ffYNwZDwlJjM3tVdNhOX7K5tH--7alV-WIHdpJ6pOpfTVY58ncDfVpTp1DbH8OHeRDxk26LoPQBW-7TW59q01pvioyAF92yy"/>
+                    <div class="project-overlay absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10 pointer-events-none">
+                        <span class="font-label-caps text-label-caps text-white/70 uppercase mb-2">Hospitality</span>
+                        <h3 class="font-headline-md text-headline-md text-white">The Azure Lounge</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2: Residential -->
+            <div class="masonry-item project-card group" data-category="residential">
+                <div class="relative overflow-hidden aspect-[4/5] bg-surface-variant">
+                    <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105" alt="West End Penthouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF1uBgFzE6bp0i21L9HDAs6WKjvAouMuN386uVnsLoTs_1lc8nskS8WIRg3VKeNuccrAmRGvjc-WzXYqtANAbp0_uUO5tPJWVgtU0egxRgI4c3oqUTvo6GG2tmb6W3o-24BXX18O3HezaRkUOOYceywpYxYvkaGn-J46Iw3wMNgtUrnI-ez7_WzpPo0LUfsujlFGhbTf9sCNN-hQMA2eUKK4d2-8LMXj-pHrA9gBxNnvcu8hW60sDdIKLvojCPgmvVrqeX9kzvLQvv"/>
+                    <div class="project-overlay absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10 pointer-events-none">
+                        <span class="font-label-caps text-label-caps text-white/70 uppercase mb-2">Residential</span>
+                        <h3 class="font-headline-md text-headline-md text-white">West End Penthouse</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3: Commercial -->
+            <div class="masonry-item project-card group" data-category="commercial">
+                <div class="relative overflow-hidden aspect-[21/9] bg-surface-variant">
+                    <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105" alt="Nova Tech HQ" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrFkA95_8hL-v3KM4A-LstszDaF7ubfUyN1LZQ9vsfN-7c9dctJEnNtuy78OnL_IuuVUMCcjT2WPdYySK3Cifp6E8rlAW8izWUpThZx6pMvGVJiWysiEQA93F9oSLT3F-qqN3ljmth5u99E8CQvbleevFg9VcBV3pkD4uZMvzHiOjx9X5L9xKDX6uRVnqkA00YkTeaaIZIYeITBzV1yPfkFGgXsrkkElaVfk4xkS9a29KHcR0OQAw3FE1DW-Q_5YxBRui38I03yKpv"/>
+                    <div class="project-overlay absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10 pointer-events-none">
+                        <span class="font-label-caps text-label-caps text-white/70 uppercase mb-2">Commercial</span>
+                        <h3 class="font-headline-md text-headline-md text-white">Nova Tech HQ</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4: Residential -->
+            <div class="masonry-item project-card group" data-category="residential">
+                <div class="relative overflow-hidden aspect-[3/4] bg-surface-variant">
+                    <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105" alt="The Sanctuary Villa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSYUtodq0JH2Hm0ML2Tp3PZYRzCfR9QjU_AzfUBm3wusSZRuFL_qTpaxzVgBwy23ug4dBMdgPPOTOJX9J5iCnPhQ_1qHrk4sNrY3F0C8PB13vLm-A3Y7NE41YUSJ4xcr10zjnrK2K8tK-mnf9-nfdCZDdQzQgOdxN2zJ9WFBwlXdIgfoZ3VoDSMdciWT5BcoNE2dZ7xj7bvV1Nys4rZ95Zh2kqYwl6_1DCmDFL3oWZnHe8oJecnJ7-HK95_af8Vbc5Z7z8TXuBs1Sk"/>
+                    <div class="project-overlay absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10 pointer-events-none">
+                        <span class="font-label-caps text-label-caps text-white/70 uppercase mb-2">Residential</span>
+                        <h3 class="font-headline-md text-headline-md text-white">The Sanctuary Villa</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 5: Hospitality -->
+            <div class="masonry-item project-card group" data-category="hospitality">
+                <div class="relative overflow-hidden aspect-[1/1] bg-surface-variant">
+                    <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105" alt="Heritage Boutique Hotel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcw4qWXjrMe9PsrC6JczJGv_JZVHGJhY1uy9j7cu8-nclM6tpqDfbSNSuLnahgELyz4RwLfg6qv68b2pa9izelL6_6asbD-0y5PD3Jknh6T58BYvhCjwR6W_4giAu9guHhc1Q-Dv2k2EOLzkyJ5y2j0W7SutwjSe0MaMF1lAEy9jH_4BPIh2eB-JtswxDKTNetIIsITnHl4O6Us1gVyCiXhtwwx5tOVk4F6aviL9LcyZ25QMIktU_w8t5zxlCM1XL7up5B5A12mEZn"/>
+                    <div class="project-overlay absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10 pointer-events-none">
+                        <span class="font-label-caps text-label-caps text-white/70 uppercase mb-2">Hospitality</span>
+                        <h3 class="font-headline-md text-headline-md text-white">Heritage Boutique</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-section-gap bg-primary text-white text-center overflow-hidden relative">
+        <div class="relative z-10 px-margin-mobile">
+            <span class="font-label-caps text-label-caps uppercase tracking-[0.3em] mb-6 block text-white/60">Collaborate With Us</span>
+            <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-10">Start Your Design Journey</h2>
+            <a href="contact.html" class="inline-block bg-white text-primary px-12 py-5 font-label-caps text-label-caps uppercase hover:bg-surface-container transition-colors tracking-widest text-center">
+                Request a Proposal
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-20 bg-surface-container">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="md:col-span-4 mb-10 md:mb-0">
+            <span class="font-display-lg text-headline-md text-primary block mb-6">La Maison</span>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                Crafting extraordinary environments through a lens of understated luxury and architectural precision.
+            </p>
+        </div>
+        <div class="md:col-span-2 md:col-start-6 mb-8 md:mb-0">
+            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-6">Company</h4>
+            <div class="flex flex-col gap-4">
+                <a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary transition-all underline decoration-transparent hover:decoration-primary" href="index.html#philosophy">Our Studio</a>
+                <a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary transition-all underline decoration-transparent hover:decoration-primary" href="services.html">Services</a>
+                <a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary transition-all underline decoration-transparent hover:decoration-primary" href="index.html#philosophy">Approach</a>
+            </div>
+        </div>
+        <div class="md:col-span-2 mb-8 md:mb-0">
+            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-6">Connect</h4>
+            <div class="flex flex-col gap-4">
+                <a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary transition-all underline decoration-transparent hover:decoration-primary" href="#">Instagram</a>
+                <a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary transition-all underline decoration-transparent hover:decoration-primary" href="#">LinkedIn</a>
+                <a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary transition-all underline decoration-transparent hover:decoration-primary" href="#">Pinterest</a>
+            </div>
+        </div>
+        <div class="md:col-span-3">
+            <h4 class="font-label-caps text-label-caps uppercase text-primary mb-6">Legal</h4>
+            <div class="flex flex-col gap-4">
+                <a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary transition-all underline decoration-transparent hover:decoration-primary" href="#">Privacy Policy</a>
+                <a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary transition-all underline decoration-transparent hover:decoration-primary" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-20 pt-10 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-6">
+        <span class="font-body-md text-body-md text-on-surface-variant">© 2024 La Maison Interior Design. All rights reserved.</span>
+        <div class="flex gap-8">
+            <span class="material-symbols-outlined text-primary">architecture</span>
+            <span class="material-symbols-outlined text-primary">design_services</span>
+            <span class="material-symbols-outlined text-primary">foundation</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function filterProjects(category) {
+        const items = document.querySelectorAll('.masonry-item');
+        const buttons = document.querySelectorAll('[data-filter]');
+        
+        // Update buttons styling
+        buttons.forEach(btn => {
+            btn.classList.remove('active-filter');
+            btn.classList.add('text-on-surface-variant');
+            if(btn.getAttribute('data-filter') === category) {
+                btn.classList.add('active-filter');
+                btn.classList.remove('text-on-surface-variant');
+            }
+        });
+
+        // Filter animations logic
+        items.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0) scale(1)';
+                }, 10);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px) scale(0.95)';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 500);
+            }
+        });
+    }
+
+    // Scroll animation trigger
+    window.addEventListener('scroll', () => {
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if(rect.top < window.innerHeight * 0.9) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Mobile menu toggle logic
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && closeBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            }, 10);
+            document.body.classList.add('overflow-hidden');
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
+
+    // Button click click-down/click-up micro-interactions
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('mousedown', () => {
+            button.style.transform = 'scale(0.98)';
+        });
+        button.addEventListener('mouseup', () => {
+            button.style.transform = 'scale(1)';
+        });
+    });
+</script>
+</body>
+</html>

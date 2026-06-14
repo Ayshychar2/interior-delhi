@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Services | La Maison Interior Design</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-tertiary-fixed-variant": "#5d4201",
+                  "tertiary": "#060300",
+                  "error": "#ba1a1a",
+                  "on-background": "#1d1b16",
+                  "surface-container-low": "#f9f3ea",
+                  "on-primary-container": "#898483",
+                  "inverse-surface": "#33302a",
+                  "on-surface": "#1d1b16",
+                  "outline": "#7e7570",
+                  "surface-container-highest": "#e8e2d9",
+                  "on-error-container": "#93000a",
+                  "on-tertiary-fixed": "#261900",
+                  "on-surface-variant": "#4d4541",
+                  "on-tertiary": "#ffffff",
+                  "tertiary-fixed": "#ffdea5",
+                  "secondary-fixed": "#e4e2dd",
+                  "inverse-primary": "#cbc5c3",
+                  "tertiary-fixed-dim": "#e9c176",
+                  "surface-tint": "#615e5c",
+                  "secondary": "#5e5e5b",
+                  "surface-container-high": "#ede7de",
+                  "on-secondary-fixed-variant": "#474744",
+                  "surface-dim": "#dfd9d0",
+                  "secondary-container": "#e1dfdb",
+                  "surface-bright": "#fff8ef",
+                  "primary": "#040303",
+                  "inverse-on-surface": "#f6f0e7",
+                  "error-container": "#ffdad6",
+                  "secondary-fixed-dim": "#c8c6c2",
+                  "surface-container-lowest": "#ffffff",
+                  "primary-fixed": "#e7e1df",
+                  "on-secondary-container": "#63635f",
+                  "on-secondary": "#ffffff",
+                  "tertiary-container": "#291b00",
+                  "on-error": "#ffffff",
+                  "on-secondary-fixed": "#1b1c19",
+                  "outline-variant": "#d0c4be",
+                  "surface-container": "#f3ede4",
+                  "on-primary-fixed-variant": "#494645",
+                  "surface-variant": "#e8e2d9",
+                  "surface": "#fff8ef",
+                  "on-primary": "#ffffff",
+                  "primary-fixed-dim": "#cbc5c3",
+                  "background": "#fff8ef",
+                  "on-tertiary-container": "#a2803d",
+                  "on-primary-fixed": "#1d1b1a",
+                  "primary-container": "#1f1d1c"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "gutter": "32px",
+                  "unit": "8px",
+                  "margin-mobile": "20px",
+                  "margin-desktop": "80px",
+                  "section-gap": "160px",
+                  "container-max": "1440px"
+          },
+          "fontFamily": {
+                  "body-md": ["Hanken Grotesk"],
+                  "display-lg": ["Bodoni Moda"],
+                  "headline-md": ["Bodoni Moda"],
+                  "display-lg-mobile": ["Bodoni Moda"],
+                  "label-caps": ["Hanken Grotesk"],
+                  "headline-lg": ["Bodoni Moda"],
+                  "body-lg": ["Hanken Grotesk"],
+                  "quote": ["Bodoni Moda"]
+          },
+          "fontSize": {
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                  "display-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "600"}],
+                  "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                  "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "quote": ["24px", {"lineHeight": "1.5", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-nav {
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+    }
+    .asymmetric-border::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: 20px;
+      bottom: 20px;
+      border: 1px solid rgba(4, 3, 3, 0.1);
+      z-index: -1;
+    }
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal-on-scroll.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-on-tertiary-container selection:text-white">
+
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-2xl border-b border-outline-variant/10">
+    <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+        <a class="font-display-lg text-headline-md tracking-tighter text-primary" href="index.html">La Maison</a>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-12">
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="index.html#philosophy">About Us</a>
+            <a class="font-label-caps text-label-caps text-primary font-semibold border-b border-primary pb-1" href="services.html">Services</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contacts</a>
+        </div>
+        
+        <!-- CTA & Hamburger Button Wrapper -->
+        <div class="flex items-center gap-6">
+            <a href="contact.html" class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:opacity-80 active:scale-95 transition-all duration-200 uppercase tracking-widest text-center">
+                Consultation
+            </a>
+            <button class="md:hidden flex items-center text-primary focus:outline-none" id="menu-btn" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation Drawer -->
+    <div class="fixed inset-0 z-40 bg-surface/98 backdrop-blur-md hidden flex-col justify-center items-center gap-8 transition-all duration-300 transform translate-x-full md:hidden" id="mobile-menu">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-margin-mobile text-primary focus:outline-none" id="close-btn" aria-label="Close Menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        
+        <a class="font-display-lg text-4xl text-primary mb-4" href="index.html">La Maison</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="index.html">Home</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="index.html#philosophy">About Us</a>
+        <a class="font-label-caps text-lg text-primary font-semibold border-b border-primary pb-1 uppercase tracking-widest" href="services.html">Services</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="portfolio.html">Portfolio</a>
+        <a class="font-label-caps text-lg text-on-surface-variant hover:text-primary transition-colors py-2 uppercase tracking-widest" href="contact.html">Contacts</a>
+        
+        <a href="contact.html" class="mt-4 bg-primary text-on-primary px-8 py-3 font-label-caps text-label-caps hover:opacity-80 active:scale-95 transition-all duration-200">
+            Consultation
+        </a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative min-h-[819px] flex items-center pt-24 overflow-hidden">
+        <div class="px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+            <div class="md:col-span-6 z-10">
+                <span class="font-label-caps text-label-caps text-on-tertiary-container block mb-6">WHAT WE DO</span>
+                <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-8">Elevating The Art <br/>Of Living</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-10">
+                    We transform spaces into personal sanctuaries. From the initial concept to the final selection of materials, our studio provides a comprehensive suite of services tailored to your unique lifestyle.
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-px bg-primary/20"></div>
+                    <span class="font-label-caps text-label-caps text-on-surface-variant">SCROLL TO DISCOVER</span>
+                </div>
+            </div>
+            <div class="md:col-start-8 md:col-span-5 relative h-[600px] mt-12 md:mt-0">
+                <div class="absolute inset-0 bg-surface-container-high -translate-x-8 translate-y-8 z-0"></div>
+                <img class="w-full h-full object-cover relative z-10" alt="Luxury Living Space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNyqxrmk22xyrjaYlXMEVEqrC6a5YYY66GNaC_asHSXNnJZ7qnQXGYMlvvtMfIcrHyU0VHXduLEmuHiseUZ0qHD0mbZGsfBNQo9OkOVlYfXefJE94LE_KdW2VZqSFqoBFkwsvuVDlDGzinkQf3o921gaDXETOreKhrSaAfTOdDM4kS2NTBUYrwOcuXlBQPrEJOOrSULU57muYjjbe1hGh1dtHeB_D_PCIo4mrIMTf_3gMqVNH25YOz6z6aq2xyFYd_mA-RV_b8FTXw"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="py-section-gap">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <!-- Service 01: Interior Design -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap items-center reveal-on-scroll">
+                <div class="md:col-span-5 order-2 md:order-1">
+                    <div class="relative group">
+                        <div class="absolute -inset-4 border border-outline-variant/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        <img class="w-full aspect-[4/5] object-cover" alt="Interior Design concept" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArGJLVKr1AZy6aI5mfxHWbtcpHurNZRGvsZFCDaHxYE2fqcc2fn8PMMz8uOcVCDORUb95OAaqS_rgPqI55k2NQ4K2D7oW3ih6HRx7ItPpfRfKXOVsrlZ3WqtpOcb5lFG3117oardPmbsy_9YwlAHDYC94O8IuDI2X4oDB4rap9bZXQvfRSopOfPTWQkdrZvntgS_5uJXvBT0s0ycgX3QYHphTagGQgjmWTuS91Z527ddseYpN9ulTvKzeJpbElpNz2NitgHMLGHXpA"/>
+                        <div class="absolute top-8 right-8">
+                            <span class="font-display-lg text-[120px] text-primary/5 select-none leading-none">01</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-start-7 md:col-span-5 order-1 md:order-2 mb-12 md:mb-0">
+                    <span class="font-label-caps text-label-caps text-on-tertiary-container block mb-4">CONCEPTUAL PLANNING</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Interior Design</h2>
+                    <div class="w-16 h-px bg-on-tertiary-container mb-8"></div>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                        We implement interior design for spaces of all scales. With a competent interior design, even a small apartment can be significantly expanded, modernized and visually enlarged, giving it more usable space and emotional resonance. Our process begins with understanding your rhythm of life.
+                    </p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[18px] text-on-tertiary-container">check</span>
+                            <span class="font-label-caps text-[11px] tracking-widest text-on-surface">SPATIAL ZONING &amp; FLOW</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[18px] text-on-tertiary-container">check</span>
+                            <span class="font-label-caps text-[11px] tracking-widest text-on-surface">3D PHOTOREALISTIC VISUALIZATION</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-[18px] text-on-tertiary-container">check</span>
+                            <span class="font-label-caps text-[11px] tracking-widest text-on-surface">LIGHTING DESIGN SCHEMES</span>
+                        </li>
+                    </ul>
+                    <a href="portfolio.html" class="inline-block border border-on-tertiary-container text-on-tertiary-container font-label-caps text-label-caps px-10 py-4 hover:bg-on-tertiary-container hover:text-white transition-all">
+                        EXPLORE DESIGN PROJECTS
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 02: Turnkey Renovation -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap items-center reveal-on-scroll">
+                <div class="md:col-span-5 mb-12 md:mb-0">
+                    <span class="font-label-caps text-label-caps text-on-tertiary-container block mb-4">COMPLETE MANAGEMENT</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Turnkey Renovation</h2>
+                    <div class="w-16 h-px bg-on-tertiary-container mb-8"></div>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                        A well-established system of managing all stages of work makes it possible to meet deadlines and complete the interior design without you. We visit the site, monitor the similarity between the design project and the actual situation, and control the correspondence to the color scheme and technical specifications.
+                    </p>
+                    <div class="bg-surface-container-low p-10 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-8">
+                            <span class="material-symbols-outlined text-4xl text-on-surface/10 group-hover:text-on-tertiary-container/30 transition-colors">construction</span>
+                        </div>
+                        <p class="font-quote text-quote text-primary italic mb-6">"Quiet luxury is about the invisible quality of the build as much as the visible beauty of the finish."</p>
+                        <span class="font-label-caps text-label-caps text-on-surface-variant">— THE MAISON PHILOSOPHY</span>
+                    </div>
+                </div>
+                <div class="md:col-start-7 md:col-span-6 relative mt-8 md:mt-0">
+                    <div class="asymmetric-border relative">
+                        <img class="w-full aspect-video object-cover" alt="Ongoing luxury renovation project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdl52V1bLERcPsAelS4OZUvaRTnqEuQVtCmdB_edMnR2BEQdKO3bfsLZ2NUDm0cpS-RDAWyoJ5RDyxHdObr-Fxg_uew1RrWYstZKNtycA1dQ_L1mBcr4i7_6FEJ0CFpiGD5gkj8FZ34litMiqc0kP_CBNh0Oyvm5Gg-lMMEUuCBqgHL2OTrv93RypiDJFNttWctH-sS-ovjmQXjPfYnRQ2spCyeeuilWgrX3zSFExyzycCA8yrc-oVgXAPXKTGo2TdCGCK5SvDggaV"/>
+                    </div>
+                    <div class="absolute -bottom-12 -left-12 hidden md:block">
+                        <span class="font-display-lg text-[120px] text-primary/5 select-none leading-none">02</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 03: Material Selection -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center reveal-on-scroll">
+                <div class="md:col-span-6 relative mb-12 md:mb-0">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img class="w-full aspect-square object-cover" alt="Interior design materials" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKWcRAdeqOlQIbzmmt2dWAEmkwFWwJ7FuPWIY28CD-S_rUtoQYV5LzOJk5pzKZ4COrq7j1x8pGlcOaq3py6OZ4gDA3l8mLjTwgdbQDrCO1Nfs-o_L799V4SSFaelBLw2Qq7NFqldyTQ9pLk2_S8j0QqZZpVbIYurP0Vk2zCoSdAyETPog5SaOLdNvNPw1B4-qyipahR3ICVMM7_wUZP5hnWQDXQkTWOanGr0ellzgZhsd6YxXNMs2NTx5Wt_W7wS_Gcpr46SKt-koO"/>
+                        <img class="w-full aspect-square object-cover mt-12" alt="Color palette swatches" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhBj-GlXbYDqlUyB4RnuAEqrCPBdEU-mmIu5DFYNt6W8J0YdnwqNgp8g1Ehmc3pOVRKbp_jz5pi9hsiCLg8kO1TCQDwUYON4uKIWLJQoeXEa80dktEYiBE4dkOaGxl_eTRVpvwmme0bOlGFkiw8liQ0PCZw3r5cHlJKDO4PNH7LbG4P0l9vQI6Tj5shJvagWp8hwymm1o-WlaTp_ARmqH5Z4gfPFWSje5HyZm6QAFVYORmatPiuFCAsry9UTrErVBZBr4cvqyvfSc3"/>
+                    </div>
+                    <div class="absolute -top-12 -right-12 hidden md:block">
+                        <span class="font-display-lg text-[120px] text-primary/5 select-none leading-none">03</span>
+                    </div>
+                </div>
+                <div class="md:col-start-8 md:col-span-5">
+                    <span class="font-label-caps text-label-caps text-on-tertiary-container block mb-4">TACTILE LUXURY</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Selection of Materials</h2>
+                    <div class="w-16 h-px bg-on-tertiary-container mb-8"></div>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                        Choosing materials and interior items together with a specialist is a comprehensive and cost-effective service for the client. It helps you to purchase stylistically justified and functional objects that will not stand out from the overall picture of your home. We source from an exclusive network of global artisans and suppliers.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 pb-6 border-b border-outline-variant/10">
+                            <span class="font-label-caps text-label-caps text-on-tertiary-container mt-1">WOOD</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant italic">Hand-selected European Oak, Walnut, and reclaimed timber with organic finishes.</p>
+                        </div>
+                        <div class="flex items-start gap-4 pb-6 border-b border-outline-variant/10">
+                            <span class="font-label-caps text-label-caps text-on-tertiary-container mt-1">STONE</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant italic">Rare Carrara marble, textured limestone, and honed basalt for architectural surfaces.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="font-label-caps text-label-caps text-on-tertiary-container mt-1">TEXTILE</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant italic">Belgian linens, pure wool bouclé, and sustainably sourced organic cottons.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estimate CTA Section -->
+    <section class="bg-primary py-32 text-on-primary text-center">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal-on-scroll">
+            <h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg mb-8">Ready to define your space?</h2>
+            <p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-2xl mx-auto mb-12">
+                Contact our studio for a comprehensive consultation and receive a preliminary estimate for your project.
+            </p>
+            <a href="contact.html" class="inline-block bg-on-tertiary-container text-white font-label-caps text-label-caps px-12 py-5 uppercase tracking-widest hover:opacity-90 transition-all text-center">
+                CALCULATE THE ESTIMATE
+                <span class="material-symbols-outlined align-middle ml-2 text-[18px]">north_east</span>
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer Shell -->
+<footer class="w-full py-20 bg-surface-container">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="md:col-span-4 mb-12 md:mb-0">
+            <a class="font-display-lg text-headline-md text-primary mb-8 block" href="index.html">La Maison</a>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                Architectural integrity and interior refinement for the modern collector.
+            </p>
+        </div>
+        <div class="md:col-span-2 md:col-start-6 mb-10 md:mb-0">
+            <span class="font-label-caps text-label-caps text-on-surface mb-6 block">EXPLORE</span>
+            <ul class="space-y-3">
+                <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="portfolio.html">Portfolio</a></li>
+                <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html#philosophy">Our Studio</a></li>
+                <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press</a></li>
+                <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Awards</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-2 mb-10 md:mb-0">
+            <span class="font-label-caps text-label-caps text-on-surface mb-6 block">FOLLOW</span>
+            <ul class="space-y-3">
+                <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a></li>
+                <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+                <li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pinterest</a></li>
+            </ul>
+        </div>
+        <div class="md:col-span-3">
+            <span class="font-label-caps text-label-caps text-on-surface mb-6 block">OFFICE</span>
+            <p class="font-body-md text-on-surface-variant mb-2">124 Design District St,</p>
+            <p class="font-body-md text-on-surface-variant mb-8">San Francisco, CA 94103</p>
+            <a href="mailto:hello@lamaison.design" class="font-body-md text-primary font-semibold underline decoration-on-tertiary-container underline-offset-4 block">hello@lamaison.design</a>
+        </div>
+        <div class="md:col-span-12 mt-20 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-label-caps text-[10px] text-on-surface-variant tracking-widest uppercase">© 2024 La Maison Interior Design. All rights reserved.</p>
+            <div class="flex gap-8">
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Privacy Policy</a>
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Intersection Observer for reveal animations
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    // Simple smooth parallax for hero image
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroImg = document.querySelector('section:first-of-type img');
+      if (heroImg) {
+        heroImg.style.transform = `translateY(${scrolled * 0.15}px)`;
+      }
+    });
+
+    // Mobile menu toggle logic
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && closeBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            }, 10);
+            document.body.classList.add('overflow-hidden');
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        
+        // Close menu when clicking links in mobile menu drawer
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
+</script>
+</body>
+</html>
